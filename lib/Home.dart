@@ -1,5 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:exam/page.dart';
 import 'package:exam/test.dart';
 import 'package:flutter/material.dart';
 
@@ -36,10 +37,11 @@ class _HomeState extends State<Home> {
           Padding(
             padding: const EdgeInsets.all(20),
             child: Badge(
+                position: BadgePosition.custom(start: 12),
                 child: Icon(
-              Icons.add_alert_sharp,
-              color: Colors.black26,
-            )),
+                  Icons.add_alert_outlined,
+                  color: Colors.black,
+                )),
           ),
         ],
       ),
@@ -53,7 +55,10 @@ class _HomeState extends State<Home> {
               child: Row(
                 children: [
                   Text('hello ,'),
-                  Text('Saraa Rose'),
+                  Text(
+                    'Saraa Rose',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
                 ],
               ),
             ),
@@ -119,14 +124,21 @@ class _HomeState extends State<Home> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Feature'),
+                  Text(
+                    'Feature',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                   Row(
                     children: [
                       Text(
                         'see more',
                         style: TextStyle(color: Colors.green),
                       ),
-                      Icon(Icons.arrow_back_ios_sharp, color: Colors.green)
+                      Image(
+                        image: AssetImage('assets/images/img_17.png'),
+                        fit: BoxFit.fill,
+                        width: 16,
+                      )
                     ],
                   )
                 ],
@@ -149,13 +161,17 @@ class _HomeState extends State<Home> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Exercise'),
+                  Text(
+                    'Exercise',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                   Row(
                     children: [
                       Text('see more', style: TextStyle(color: Colors.green)),
-                      Icon(
-                        Icons.arrow_back_ios_sharp,
-                        color: Colors.green,
+                      Image(
+                        image: AssetImage('assets/images/img_17.png'),
+                        fit: BoxFit.fill,
+                        width: 16,
                       )
                     ],
                   ),
@@ -167,30 +183,34 @@ class _HomeState extends State<Home> {
               children: [
                 Container(
                     padding: EdgeInsets.all(20),
+                    width: 150,
                     decoration: BoxDecoration(
-                        color: Colors.purple.shade100,
+                        color: Color(0xffF9F5FF),
                         borderRadius: BorderRadius.circular(12)),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Image(
                           image: AssetImage("assets/images/img_5.png"),
                           width: 15,
                         ),
-                        Text('samraa')
+                        Text('Relaxation')
                       ],
                     )),
                 Container(
                     padding: EdgeInsets.all(20),
+                    width: 150,
                     decoration: BoxDecoration(
-                        color: Colors.pinkAccent.shade100,
+                        color: Color(0xffFDF2FA),
                         borderRadius: BorderRadius.circular(12)),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Image(
                           image: AssetImage("assets/images/6.png"),
                           width: 15,
                         ),
-                        Text('samraa')
+                        Text('Meditation')
                       ],
                     )),
               ],
@@ -203,30 +223,34 @@ class _HomeState extends State<Home> {
               children: [
                 Container(
                     padding: EdgeInsets.all(20),
+                    width: 150,
                     decoration: BoxDecoration(
-                        color: Colors.orangeAccent.shade100,
+                        color: Color(0xffFFFAF5),
                         borderRadius: BorderRadius.circular(12)),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Image(
                           image: AssetImage("assets/images/7.png"),
                           width: 15,
                         ),
-                        Text('samraa')
+                        Text('Beathing')
                       ],
                     )),
                 Container(
                     padding: EdgeInsets.all(20),
+                    width: 150,
                     decoration: BoxDecoration(
-                        color: Colors.greenAccent.shade100,
+                        color: Color(0xffF0F9FF),
                         borderRadius: BorderRadius.circular(12)),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Image(
                           image: AssetImage("assets/images/8.png"),
                           width: 15,
                         ),
-                        Text('samraa')
+                        Text('Yoga')
                       ],
                     )),
               ],
@@ -235,6 +259,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Color(0xff027A48),
         onTap: (value) {},
         items: [
           BottomNavigationBarItem(
@@ -244,10 +269,10 @@ class _HomeState extends State<Home> {
                 },
                 child: Icon(
                   Icons.home,
-                  color: Colors.black,
+                  color: Color(0xff027A48),
                 ),
               ),
-              label: ""),
+              label: "."),
           BottomNavigationBarItem(
             icon: InkWell(
               onTap: () {
@@ -255,21 +280,26 @@ class _HomeState extends State<Home> {
               },
               child: Icon(
                 Icons.pages_rounded,
-                color: Colors.black,
+                color: Color(0xff667085),
               ),
             ),
             label: "",
           ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_tree_outlined,
-                color: Colors.black,
+              icon: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, PageT.routeName);
+                },
+                child: Icon(
+                  Icons.account_tree_outlined,
+                  color: Color(0xff667085),
+                ),
               ),
               label: ""),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
-                color: Colors.black,
+                color: Color(0xff667085),
               ),
               label: ""),
         ],

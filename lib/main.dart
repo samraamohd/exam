@@ -1,3 +1,4 @@
+import 'package:exam/page.dart';
 import 'package:exam/test.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         routes: {
           Home.routeName: (context) => Home(),
           Test.routeName: (context) => Test(),
+          PageT.routeName: (context) => PageT(),
         });
   }
 }
